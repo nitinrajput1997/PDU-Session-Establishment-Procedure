@@ -16,3 +16,10 @@ When the SMF agrees with the session management context creation, it will provid
 
 Now after authorization, the SMF selects the appropriate PCF and creates a policy session so that it can get the necessary PCC rules from the PCF. And also it selects the appropriate UPF to connect to the correct data network and creates the connectivity with the corresponding UPF.
 
+Now in the next step, the SMF sends the accept message toward the device together with the information related to the quality of service and also tunnel information between the gNodeB and UPF. And this information is sent via AMF. 
+
+Then AMF forward this to the radio access network. The quality of service and tunnelling information has reached the radio access network. Then the radio access network creates the connectivity to the device. And request back to the AMF with the tunnelling information on the end-point of the radio access network. 
+
+This means that all the necessary setup has now been done for sending the Uplink-Data from the device towards the 5G system. So the first uplink data can now be sent. In the next step, the AMF has previously received the RAN ends tunnel information from the RAN. Now it forwards this to the SMF and the SMF forwards this to the UPF. So that the UPF will know, what is the tunnel endpoint in the RAN-end. 
+
+So it establishes the connectivity from the UPF to the RAN. Now the GTP tunnel is complete, which means that now the UPF can forward the first Downlink-Data from the data network toward the device. So at this point, the data network connection is complete. Now both uplink and downlink data communication is successful. The AMF can go and register itself with the UDM, this is the SMF corresponding to the PDU session that was currently created.
